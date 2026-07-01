@@ -130,7 +130,7 @@ export default function AboutUsPage() {
           <Container maxWidth="xl" className={styles.storyContainer}>
             <div className={styles.storyImage}>
               <Image
-                src={storyPhotoSrc}
+                src={"/spring-cleaning/team.png"}
                 alt={storySection.photo.alt}
                 fill
                 sizes="(max-width: 900px) 92vw, 42vw"

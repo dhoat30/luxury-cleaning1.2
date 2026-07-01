@@ -41,9 +41,9 @@ const homeSections = [
   {
     acf_fc_layout: "home_hero",
     eyebrow: "PREMIUM CLEANING · TAURANGA & THE BAY OF PLENTY",
-    headline: "Let us handle the cleaning, while you reclaim your time.",
+    headline: "Let us handle the cleaning, while you <strong>reclaim your time.</strong>",
     headline_variants: {
-      A: "Let us handle the cleaning, while you reclaim your time.",
+      A: "Let us handle the cleaning, while you  <strong>reclaim your time.</strong>",
       B: "Your home, immaculate — down to the last detail.",
       C: "Cleaning, done with obsessive attention to detail.",
     },
@@ -92,7 +92,7 @@ const homeSections = [
           "No lock-in contracts",
           "Fits around your routine",
         ],
-        cta: { label: "Get a regular cleaning quote", url: "/get-a-quote" },
+        cta: { label: "Explore regular cleanings",    url: "/services/regular-cleaning", },
         image: {
           src: "/home/regular-cleaning.jpg",
           fallback: "/gallery/IMG_5003.jpg",

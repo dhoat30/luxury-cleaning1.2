@@ -62,6 +62,8 @@
       background: transparent;
       box-shadow: none;
       backdrop-filter: none;
+          grid-template-columns: auto  auto;
+
     }
 
     @media (min-width: 1000px) {
@@ -71,7 +73,7 @@
 
     @media (max-width: 520px) {
       min-height: 66px;
-      padding: 0 14px;
+      padding: 0 0;
       border-radius: 10px;
     }
 
@@ -241,12 +243,11 @@
 
     .menuButton {
       justify-self: end;
-      width: 48px;
-      height: 48px;
+ 
       border: 0;
       border-radius: 0;
       background: transparent;
-
+      padding: 0; 
       @media (min-width: 1000px) {
         display: none;
       }
