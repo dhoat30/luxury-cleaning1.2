@@ -1,0 +1,40 @@
+.section {
+  background: var(--light-surface-container);
+  padding: 16px 0;
+
+  .title {
+    color: var(--light-on-surface);
+  }
+
+  .description {
+    color: var(--light-on-surface-variant);
+  }
+
+  .cardsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      gap: 16px;
+      border: 1px solid var(--light-outline-variant);
+      background: var(--light-surface-container-low);
+      padding: 16px;
+
+      .title {
+        margin: 8px 0 0 0;
+      }
+
+      .image {
+      }
+    }
+  }
+}

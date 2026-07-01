@@ -1,0 +1,38 @@
+.section {
+  background: var(--light-surface-container-low);
+  margin-top: 16px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .contentWrapper {
+    @media (min-width: 900px) {
+      position: sticky;
+      top: 80px;
+    }
+
+    .image {
+      margin-top: 16px;
+    }
+  }
+
+  .formWrapper {
+    padding: 0 16px;
+    border-radius: 16px;
+    background: var(--light-surface-container-lowest);
+    min-height: 563px;
+  }
+}

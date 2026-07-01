@@ -1,0 +1,455 @@
+.appBar {
+  --nav-ivory: #fffaf0;
+  --nav-ink: #17120a;
+  --nav-muted: rgba(255, 250, 240, 0.74);
+  --nav-gold: #d8b66a;
+  --nav-gold-light: #f1daa0;
+  --nav-gold-soft: rgba(216, 182, 106, 0.16);
+
+  top: 0;
+  left: 0;
+  position: fixed !important;
+  z-index: 100;
+  width: 100%;
+  box-shadow: none;
+  background: transparent;
+  background-color: transparent !important;
+  pointer-events: none;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.3s ease-in-out;
+
+  @media (max-width: 999px) {
+    position: sticky !important;
+    background: rgba(13, 11, 9, 0.96);
+    background-color: rgba(13, 11, 9, 0.96) !important;
+    pointer-events: auto;
+  }
+
+  .container {
+    padding: 8px 0 0;
+
+    @media (max-width: 999px) {
+      padding: 0;
+    }
+
+    @media (min-width: 1000px) {
+      padding: 16px 0 0;
+    }
+  }
+
+  .toolbar {
+    min-height: 74px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 18px;
+    margin-top: 0;
+    padding: 0 20px;
+    border: 1px solid rgba(216, 182, 106, 0.2);
+    border-radius: 16px;
+    background: rgba(13, 11, 9, 0.92);
+    box-shadow: var(--navbar-surface-shadow);
+    backdrop-filter: blur(18px) saturate(120%);
+    pointer-events: auto;
+
+    @media (max-width: 999px) {
+      min-height: 68px;
+      margin-top: 0;
+      padding: 0 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    @media (min-width: 1000px) {
+      min-height: 74px;
+      padding: 0 22px;
+    }
+
+    @media (max-width: 520px) {
+      min-height: 66px;
+      padding: 0 14px;
+      border-radius: 10px;
+    }
+
+    .brand {
+      width: 48px;
+      height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.34));
+
+      @media (min-width: 1000px) {
+        width: 54px;
+        height: 60px;
+      }
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .desktopNav {
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+
+      @media (min-width: 1000px) {
+        display: flex;
+      }
+
+      .navItem {
+        position: relative;
+
+        .navLink {
+          min-height: 42px;
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          padding: 10px 13px;
+          border-radius: 999px;
+          color: var(--nav-muted);
+          font-size: 0.95rem;
+          font-weight: 400;
+          line-height: 1;
+          position: relative;
+          transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            box-shadow 0.2s ease;
+
+          &::after {
+            content: "";
+            width: calc(100% - 28px);
+            height: 1px;
+            position: absolute;
+            left: 14px;
+            bottom: 7px;
+            background: linear-gradient(90deg, transparent, var(--nav-gold), transparent);
+            opacity: 0;
+            transform: scaleX(0.5);
+            transition:
+              opacity 0.2s ease,
+              transform 0.2s ease;
+          }
+
+          &:hover {
+            color: var(--nav-ivory);
+          }
+
+          &.active {
+            color: var(--nav-gold-light);
+
+            &::after {
+              opacity: 1;
+              transform: scaleX(1);
+            }
+          }
+
+          .chevron {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.2s ease;
+          }
+
+          .chevronOpen {
+            transform: rotate(180deg);
+          }
+        }
+
+        .submenu {
+          min-width: 240px;
+          position: absolute;
+          top: calc(100% + 12px);
+          left: 0;
+          display: grid;
+          gap: 4px;
+          padding: 8px;
+          border: 1px solid rgba(216, 182, 106, 0.18);
+          border-radius: 8px;
+          background: rgba(17, 14, 12, 0.98);
+          box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(-6px);
+          transition:
+            opacity 0.18s ease,
+            transform 0.18s ease;
+
+          .submenuLink {
+            padding: 12px 14px;
+            border-radius: 6px;
+            color: var(--nav-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+
+            &:hover,
+            &.active {
+              background: var(--nav-gold-soft);
+              color: var(--nav-gold-light);
+            }
+          }
+        }
+
+        .submenuOpen {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    .cta {
+      display: none;
+      justify-self: end;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border: 1px solid rgba(216, 182, 106, 0.46);
+      border-radius: 0;
+      background: rgba(255, 250, 240, 0.96);
+      color: var(--nav-ink);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.02rem;
+      line-height: 1;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+      @media (min-width: 1000px) {
+        display: inline-flex;
+      }
+
+      &:hover {
+        border-color: var(--nav-gold-light);
+        background: #fffaf0;
+        color: var(--nav-ink);
+        transform: translateY(-1px);
+      }
+    }
+
+    .menuButton {
+      justify-self: end;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+
+      @media (min-width: 1000px) {
+        display: none;
+      }
+
+      svg {
+        path {
+          fill: var(--nav-ivory);
+        }
+      }
+    }
+  }
+}
+
+.drawerOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(0, 0, 0, 0.48);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 240ms ease,
+    visibility 0ms linear 240ms;
+}
+
+.drawerOverlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    opacity 240ms ease,
+    visibility 0ms linear 0ms;
+}
+
+.mobilePanel {
+  --nav-ivory: #f8f1e4;
+  --nav-muted: rgba(248, 241, 228, 0.76);
+  --nav-gold: #d8b66a;
+  --nav-gold-light: #f1daa0;
+  --nav-gold-soft: rgba(216, 182, 106, 0.14);
+
+  width: 360px;
+  max-width: 88vw;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 22px 28px;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(216, 182, 106, 0.16);
+  background:
+    radial-gradient(circle at 16% 4%, rgba(216, 182, 106, 0.13), transparent 34%),
+    linear-gradient(180deg, #16110d 0%, #0a0807 100%);
+  color: var(--nav-ivory);
+  box-shadow: 18px 0 48px rgba(0, 0, 0, 0.32);
+  opacity: 0.84;
+  transform: translateX(-104%);
+  transition:
+    opacity 260ms ease,
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+
+  @media (max-width: 520px) {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  &.mobilePanelOpen {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .drawerHeader {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(216, 182, 106, 0.12);
+
+    .drawerTitle {
+      color: #d8b66a;
+      font-size: 0.76rem;
+      font-weight: 820;
+      letter-spacing: 0.14rem;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .closeButton {
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--nav-ivory);
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+
+      &:hover {
+        color: var(--nav-gold-light);
+        transform: rotate(4deg);
+      }
+    }
+  }
+
+  .mobileLinks {
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+
+    .mobileItem {
+      .mobileLink {
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 0;
+        color: var(--nav-ivory);
+        font-size: 1.02rem;
+        font-weight: 650;
+        letter-spacing: 0;
+        transition:
+          color 180ms ease,
+          transform 180ms ease;
+
+        &:hover,
+        &.active {
+          color: var(--nav-gold-light);
+          transform: translateX(3px);
+        }
+
+        .chevron {
+          width: 22px;
+          height: 22px;
+          transition: transform 0.2s ease;
+        }
+
+        .chevronOpen {
+          transform: rotate(180deg);
+        }
+      }
+
+      .mobileSubmenu {
+        display: none;
+        margin: 0;
+        padding: 0 0 8px 12px;
+        list-style: none;
+
+        .mobileSubmenuLink {
+          display: block;
+          padding: 10px 0;
+          color: var(--nav-muted);
+          font-size: 0.94rem;
+          font-weight: 500;
+
+          &:hover,
+          &.active {
+            color: var(--nav-gold-light);
+          }
+        }
+      }
+
+      .mobileSubmenuOpen {
+        display: block;
+      }
+
+      .mobileDivider {
+        border-color: rgba(216, 182, 106, 0.1);
+      }
+    }
+  }
+
+  .drawerCta {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 28px;
+    padding: 0 18px;
+    border: 1px solid rgba(216, 182, 106, 0.24);
+    border-radius: 0;
+    background: rgba(255, 250, 240, 0.06);
+    color: var(--nav-ivory);
+    font-size: 0.92rem;
+    font-weight: 650;
+    letter-spacing: 0.02rem;
+    transition:
+      background 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease;
+
+    &:hover {
+      border-color: rgba(216, 182, 106, 0.6);
+      background: #fffaf0;
+      color: #17120a;
+    }
+  }
+}

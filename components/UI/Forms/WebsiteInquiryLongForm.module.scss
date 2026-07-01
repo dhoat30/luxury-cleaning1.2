@@ -1,0 +1,67 @@
+.container {
+  padding: 0 !important;
+
+  :global(.mobile-stepper) {
+    background: none;
+    padding: 0;
+
+    :global(.MuiLinearProgress-root) {
+      width: 100%;
+      background: var(--light-primary-container);
+    }
+  }
+
+  :global(.button-wrapper) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  :global(svg.Mui-active) {
+    color: #f9f871;
+
+    text {
+      fill: black;
+    }
+  }
+
+  :global(svg.Mui-completed) {
+    color: #f9f871;
+  }
+
+  @media (max-width: 500px) {
+    :global(.stepper-wrapper) {
+      display: none;
+    }
+  }
+
+  .inputWrapper {
+    padding: 0 24px 24px 24px;
+    background: var(--light--surface-container);
+    border-radius: 12px;
+
+    @media (max-width: 600px) {
+      padding: 0 16px 24px 16px;
+    }
+
+    :global(.Mui-error) {
+      font-size: 1rem;
+    }
+  }
+
+  :global(.quote-wrapper) {
+    background: var(--light--surface-container);
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 40px auto 0 auto;
+
+    :global(.quote) {
+      max-width: 300px;
+      margin: 16px auto;
+      padding: 16px 0;
+      border: dashed 2px var(--light-primary, #f9f871);
+    }
+  }
+}

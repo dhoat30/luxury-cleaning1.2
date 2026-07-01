@@ -1,0 +1,76 @@
+.container {
+  .inputWrapper {
+    margin: 0 auto;
+    padding: 8px 32px 32px;
+
+    @media (max-width: 600px) {
+      padding: 4px 22px 24px;
+    }
+
+    :global(.MuiFormControl-root) {
+      margin-top: 18px;
+    }
+
+    :global(.MuiInputLabel-root) {
+      color: rgba(32, 27, 21, 0.68);
+      font-weight: 420;
+    }
+
+    :global(.MuiOutlinedInput-root) {
+      border-radius: 4px;
+      background: rgba(255, 250, 240, 0.7);
+
+      :global(.MuiOutlinedInput-notchedOutline) {
+        border-color: rgba(107, 75, 27, 0.2);
+      }
+
+      &:hover {
+        :global(.MuiOutlinedInput-notchedOutline) {
+          border-color: rgba(107, 75, 27, 0.42);
+        }
+      }
+
+      &:global(.Mui-focused) {
+        :global(.MuiOutlinedInput-notchedOutline) {
+          border-color: var(--light-primary);
+          border-width: 1px;
+        }
+      }
+    }
+
+    :global(.MuiInputBase-input) {
+      color: #201b15;
+      font-weight: 420;
+    }
+
+    :global(.MuiFormHelperText-root.Mui-error) {
+      margin-left: 0;
+      font-size: 0.85rem;
+      font-weight: 520;
+    }
+
+    :global(.MuiLoadingButton-root) {
+      width: 100%;
+      min-height: 54px;
+      margin: 24px 0 0;
+      border-radius: 0;
+      background: #081523;
+      color: #fffaf0;
+      font-size: 0.92rem;
+      font-weight: 760;
+      letter-spacing: 0.02rem;
+      text-transform: uppercase;
+      box-shadow: 0 18px 34px rgba(8, 21, 35, 0.18);
+
+      &:hover {
+        background: #111f2f;
+        box-shadow: 0 22px 42px rgba(8, 21, 35, 0.22);
+      }
+
+      &:global(.Mui-disabled) {
+        background: rgba(8, 21, 35, 0.5);
+        color: rgba(255, 250, 240, 0.78);
+      }
+    }
+  }
+}

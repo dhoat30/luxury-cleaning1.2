@@ -1,0 +1,156 @@
+.footerContainer {
+  position: relative;
+  overflow: hidden;
+  padding: 74px 0 54px;
+  border-top: 1px solid rgba(216, 182, 106, 0.16);
+  background:
+    radial-gradient(
+      ellipse at 12% 8%,
+      rgba(216, 182, 106, 0.16) 0%,
+      rgba(216, 182, 106, 0.035) 34%,
+      rgba(216, 182, 106, 0) 66%
+    ),
+    linear-gradient(135deg, #0a0807 0%, #17120a 52%, #241f19 100%);
+
+  @media (max-width: 900px) {
+    padding: 58px 0 42px;
+  }
+}
+
+.container {
+  a {
+    color: inherit;
+  }
+
+  .footerWrapper {
+    display: grid;
+    grid-template-columns: minmax(260px, 1.15fr) minmax(160px, 0.7fr) minmax(180px, 0.78fr) minmax(280px, 0.95fr);
+    gap: 54px;
+    align-items: start;
+
+    @media (max-width: 1100px) {
+      grid-template-columns: 1.1fr 1fr;
+      gap: 44px 56px;
+    }
+
+    @media (max-width: 680px) {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+
+    .logoWrapper {
+      max-width: 370px;
+
+      .logoLink {
+        width: 86px;
+        height: 96px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+
+      .brandLabel {
+        display: block;
+        color: #f1daa0;
+        font-size: 0.78rem;
+        font-weight: 820;
+        letter-spacing: 0.12rem;
+        line-height: 1.4;
+        text-transform: uppercase;
+      }
+
+      .brandText {
+        max-width: 330px;
+        margin: 14px 0 0;
+        color: rgba(255, 250, 240, 0.74);
+        font-size: 1rem;
+        font-weight: 360;
+        line-height: 1.65;
+      }
+
+      .footerCta {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        margin-top: 24px;
+        padding: 0 18px;
+        border: 1px solid rgba(216, 182, 106, 0.34);
+        background: rgba(255, 250, 240, 0.06);
+        color: #fffaf0;
+        font-size: 0.9rem;
+        font-weight: 760;
+        letter-spacing: 0;
+        transition:
+          background 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease;
+
+        &:hover {
+          border-color: rgba(216, 182, 106, 0.72);
+          background: #fffaf0;
+          color: #17120a;
+        }
+      }
+    }
+  }
+
+  .columnTitle {
+    margin: 0 0 20px;
+    color: #fffaf0;
+    font-size: 1rem;
+    font-weight: 820;
+    letter-spacing: 0;
+    line-height: 1.2;
+  }
+
+  .linkList {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: inline-flex;
+      position: relative;
+      color: rgba(255, 250, 240, 0.68);
+      font-size: 0.98rem;
+      font-weight: 360;
+      line-height: 1.4;
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+
+      &::before {
+        content: "";
+        width: 0;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        background: #d8b66a;
+        transition: width 180ms ease;
+      }
+
+      &:hover {
+        color: #f1daa0;
+        transform: translateX(3px);
+
+        &::before {
+          width: 100%;
+        }
+      }
+
+      span {
+        color: inherit;
+        font: inherit;
+      }
+    }
+  }
+
+  .contactWrapper {
+    .contactSection {
+      max-width: 330px;
+    }
+  }
+}

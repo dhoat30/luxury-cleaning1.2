@@ -1,0 +1,215 @@
+.page {
+  min-height: 100vh;
+  background: var(--light-surface-bright);
+}
+
+.hero {
+  padding: 154px 0 54px;
+
+  @media (max-width: 760px) {
+    padding: 126px 0 38px;
+  }
+
+  .intro {
+    max-width: 780px;
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--light-primary);
+      font-size: 0.78rem;
+      font-weight: 760;
+      letter-spacing: 0.13rem;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      color: var(--light-on-surface);
+      font-size: clamp(2.7rem, 6vw, 5.5rem);
+      font-weight: 760;
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 620px;
+      margin: 24px 0 0;
+      color: var(--light-on-surface-variant);
+      font-size: clamp(1.02rem, 1.4vw, 1.18rem);
+      font-weight: 360;
+      line-height: 1.65;
+    }
+  }
+}
+
+.gallerySection {
+  padding: 0 0 92px;
+
+  @media (max-width: 760px) {
+    padding-bottom: 64px;
+  }
+
+  .galleryGrid {
+    column-count: 3;
+    column-gap: 18px;
+
+    @media (max-width: 1080px) {
+      column-count: 2;
+    }
+
+    @media (max-width: 640px) {
+      column-count: 1;
+      column-gap: 0;
+    }
+
+    .imageCard {
+      width: 100%;
+      display: block;
+      break-inside: avoid;
+      margin: 0 0 18px;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid rgba(107, 75, 27, 0.12);
+      border-radius: 8px;
+      background: #fffaf0;
+      box-shadow: 0 18px 42px rgba(23, 18, 10, 0.08);
+      cursor: zoom-in;
+      text-align: left;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        border-color: rgba(107, 75, 27, 0.28);
+        box-shadow: 0 22px 54px rgba(23, 18, 10, 0.14);
+        outline: none;
+        transform: translateY(-2px);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 72px 96px 48px;
+  background: rgba(8, 7, 6, 0.94);
+  cursor: zoom-out;
+
+  @media (max-width: 760px) {
+    padding: 72px 18px 34px;
+  }
+
+  .lightboxFigure {
+    width: min(100%, 1280px);
+    max-height: 86vh;
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    cursor: default;
+
+    img {
+      width: 100%;
+      max-height: calc(86vh - 42px);
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 34px 92px rgba(0, 0, 0, 0.42);
+    }
+
+    figcaption {
+      color: rgba(255, 250, 240, 0.76);
+      font-size: 0.9rem;
+      font-weight: 520;
+      letter-spacing: 0.02rem;
+      text-align: center;
+    }
+  }
+
+  .lightboxButton {
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    border: 1px solid rgba(216, 182, 106, 0.24);
+    background: rgba(255, 250, 240, 0.1);
+    color: #fffaf0;
+    backdrop-filter: blur(12px);
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: rgba(216, 182, 106, 0.5);
+      background: rgba(255, 250, 240, 0.18);
+      transform: translateY(-1px);
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .closeButton {
+    top: 24px;
+    right: 24px;
+  }
+
+  .previousButton {
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(calc(-50% - 1px));
+    }
+  }
+
+  .nextButton {
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(calc(-50% - 1px));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .lightboxButton {
+      width: 44px;
+      height: 44px;
+    }
+
+    .closeButton {
+      top: 16px;
+      right: 16px;
+    }
+
+    .previousButton {
+      left: 14px;
+    }
+
+    .nextButton {
+      right: 14px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.container {
+  min-height: 114px !important;
+
+  .title {
+    color: var(--light-on-surface-variant, #4c4639);
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: var(--material-theme--display--large);
+  }
+}
+
+.textField {
+  width: 100% !important;
+
+  label {
+  }
+}

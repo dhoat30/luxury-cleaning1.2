@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding-top: 120px;
+  padding-bottom: 40px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .description {
+    font-weight: 350;
+  }
+
+  .contactFormWrapper {
+    padding: 0 16px;
+  }
+
+  .hubspotWrapper {
+    min-height: 690px;
+  }
+}

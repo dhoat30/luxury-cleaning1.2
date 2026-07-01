@@ -1,0 +1,108 @@
+.container {
+  position: relative;
+  border: 1px solid rgba(107, 75, 27, 0.14);
+  background: #fffaf0;
+  box-shadow:
+    0 18px 56px rgba(23, 18, 10, 0.12),
+    0 2px 10px rgba(23, 18, 10, 0.04);
+  padding: 10px;
+  border-radius: 8px;
+
+  @media (max-width: 600px) {
+    padding: 6px;
+    border-radius: 8px;
+    box-shadow:
+      0 12px 34px rgba(23, 18, 10, 0.12),
+      0 1px 6px rgba(23, 18, 10, 0.04);
+  }
+
+  .videoWrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    background: #0b0907;
+    border-radius: 4px;
+
+    @media (max-width: 600px) {
+      border-radius: 4px;
+    }
+
+  }
+
+  .imgWrapper {
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+
+    @media (max-width: 600px) {
+      border-radius: 4px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(13, 11, 9, 0.04), rgba(13, 11, 9, 0.28)),
+        radial-gradient(circle at 50% 50%, transparent 0%, rgba(13, 11, 9, 0.18) 100%);
+      pointer-events: none;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.button {
+  width: 82px;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  border: 1px solid rgba(255, 250, 240, 0.88);
+  border-radius: 50%;
+  background: rgba(13, 11, 9, 0.26);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+
+  @media (max-width: 600px) {
+    width: 64px;
+    height: 64px;
+    border-color: rgba(255, 250, 240, 0.78);
+    background: rgba(13, 11, 9, 0.34);
+  }
+
+  &:hover {
+    background: rgba(13, 11, 9, 0.42);
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+
+  svg {
+    width: 58px;
+    height: 58px;
+
+    @media (max-width: 600px) {
+      width: 46px;
+      height: 46px;
+    }
+
+    circle {
+      stroke: transparent !important;
+    }
+
+    path {
+      fill: #fffaf0;
+    }
+  }
+}

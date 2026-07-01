@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://luxurycleaning.nz
+
+# Sitemaps
+Sitemap: https://luxurycleaning.nz/sitemap.xml

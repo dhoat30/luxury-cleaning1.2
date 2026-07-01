@@ -1,0 +1,42 @@
+.formControl {
+  :global(.MuiTypography-body1) {
+    font-weight: 350;
+  }
+
+  :global(.radio-label.Mui-focused) {
+    /* color: rgba(255, 255, 255, 0.7); */
+  }
+
+  label {
+    @media (max-width: 600px) {
+      padding: 8px 0;
+    }
+  }
+}
+
+.textField {
+  label,
+  input {
+    font-weight: 350;
+  }
+}
+
+.sliderContainer {
+  margin-top: 16px;
+
+  .sliderWrapper {
+    margin: 0 8px;
+    display: grid;
+    grid-template-columns: auto 60px;
+    gap: 24px;
+    align-items: center;
+
+    @media (max-width: 600px) {
+      margin-left: 24px;
+    }
+
+    :global(.MuiFormControl-root) {
+      margin-top: 0;
+    }
+  }
+}

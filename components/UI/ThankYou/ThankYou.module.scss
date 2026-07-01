@@ -1,0 +1,37 @@
+.section {
+  background: var(--light-surface-container-low);
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    background: var(--light-surface-container);
+    padding: 24px;
+    border-radius: 12px;
+
+    .imageContainer {
+      max-width: 400px;
+      margin: 0 auto;
+
+      .imageWrapper {
+        width: 100%;
+        padding-bottom: calc(86%);
+        position: relative;
+      }
+    }
+  }
+
+  .contentWrapper {
+    margin-top: 16px;
+  }
+
+  .buttonWrapper {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}

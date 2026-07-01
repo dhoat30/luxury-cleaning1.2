@@ -1,0 +1,14 @@
+.heroSection {
+  background: var(--dark-surface-container-lowest);
+}
+
+.container {
+  align-items: center;
+  height: calc(90vh);
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .container {
+  }
+}

@@ -1,0 +1,46 @@
+.container {
+  display: grid;
+  gap: 14px;
+  margin-top: 0;
+
+  .infoWrapper {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      margin-top: -2px;
+
+      circle {
+        fill: rgba(255, 250, 240, 0.1);
+      }
+
+      path {
+        fill: #d8b66a;
+      }
+    }
+
+    a {
+      display: inline-flex;
+      color: rgba(255, 250, 240, 0.68);
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+
+      &:hover {
+        color: #f1daa0;
+        transform: translateX(3px);
+      }
+    }
+
+    span {
+      color: inherit;
+      font-size: 0.98rem;
+      font-weight: 360;
+      line-height: 1.45;
+    }
+  }
+}

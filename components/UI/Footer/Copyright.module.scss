@@ -1,0 +1,23 @@
+.copyRight {
+  background: var(--dark-surface-container-high);
+  padding: 8px 0;
+  text-align: center;
+
+  p {
+    color: var(--dark-on-surface);
+  }
+
+  a {
+    color: var(--dark-primary);
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    strong {
+      color: var(--dark-primary);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.loadingButton {
+  @media (max-width: 500px) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.alignDefault {
+  margin: 16px 0;
+}
+
+.alignRight {
+  margin: 16px 0 0 auto;
+}
