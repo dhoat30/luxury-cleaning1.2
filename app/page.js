@@ -2,8 +2,6 @@ import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import CheckCircleOutlineRoundedIcon from "@mui/icons-material/CheckCircleOutlineRounded";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import { existsSync } from "node:fs";
-import path from "node:path";
 import Footer from "@/components/UI/Footer/Footer";
 import Header from "@/components/UI/Header/Header";
 import HeroSection from "@/components/UI/Layout/Sections/HeroSection/HeroSection";
@@ -154,13 +152,7 @@ const homeSections = [
 const getSection = (layout) =>
   homeSections.find((section) => section.acf_fc_layout === layout);
 
-const getPublicImageSrc = (src, fallback) => {
-  if (!src) return fallback;
-
-  const publicPath = path.join(process.cwd(), "public", src);
-
-  return existsSync(publicPath) ? src : fallback;
-};
+const getPublicImageSrc = (src, fallback) => src || fallback;
 
 export default function Home() {
   const hero = getSection("home_hero");

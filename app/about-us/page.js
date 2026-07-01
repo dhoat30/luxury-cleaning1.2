@@ -1,8 +1,6 @@
 import CheckCircleOutlineRoundedIcon from "@mui/icons-material/CheckCircleOutlineRounded";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import { existsSync } from "node:fs";
-import path from "node:path";
 import Footer from "@/components/UI/Footer/Footer";
 import Header from "@/components/UI/Header/Header";
 import Image from "next/image";
@@ -46,7 +44,7 @@ const aboutSections = [
     acf_fc_layout: "about_story",
     heading: "How it started",
     photo: {
-      src: "/about/hardeep-noor.jpg",
+      src: "/home/about-us.png",
       alt: "Hardeep and Noor, founders of Luxury Cleaning",
     },
     body: [
@@ -98,13 +96,7 @@ const ctaSection = aboutSections.find(
   (section) => section.acf_fc_layout === "about_cta"
 );
 
-const getPublicImageSrc = (src, fallback) => {
-  if (!src) return fallback;
-
-  const publicPath = path.join(process.cwd(), "public", src);
-
-  return existsSync(publicPath) ? src : fallback;
-};
+const getPublicImageSrc = (src, fallback) => src || fallback;
 
 export default function AboutUsPage() {
   const storyPhotoSrc = getPublicImageSrc(
